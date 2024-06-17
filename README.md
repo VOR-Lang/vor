@@ -1,15 +1,15 @@
-# Vor
-Vor programming language.
+# VOR
+VOR programming language.
 
 ## Table of Contents
-- [Vor](#Vor)
+- [VOR](#vor)
   - [Features](#features)
   - [Standard Libraries](#standard-libraries)
 
 ## Features
 
-1. ***Importing Python Modules:*** Vor allows you to create modules in python which you can import into your script!
-2. ***Custom Functions:*** Vor has built-in `debug()` and other functions to allow less code for you to write.
+1. ***Importing Python Modules:*** VOR allows you to create modules in python which you can import into your script!
+2. ***Custom Functions:*** VOR has built-in `debug()` and other functions to allow less code for you to write.
 
 ## Standard Libraries
 
