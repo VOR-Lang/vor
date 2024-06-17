@@ -1,6 +1,8 @@
 # VOR
 VOR programming language.
 
+VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Programming Language
+
 ## Table of Contents
 - [VOR](#vor)
   - [Features](#features)
