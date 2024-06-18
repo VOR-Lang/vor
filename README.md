@@ -1,7 +1,9 @@
 # VOR
-VOR programming language.
+[![CodeQL](https://github.com/VOR-Lang/vor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/VOR-Lang/vor/actions/workflows/github-code-scanning/codeql)
 
 VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Programming Language
+
+(For the non-coders, this basically means this is a general purpose programming language)
 
 ## Table of Contents
 - [VOR](#vor)
