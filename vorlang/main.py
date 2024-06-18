@@ -119,6 +119,10 @@ class SimpleInterpreter:
         parts = line.split(" ")
         if len(parts) == 2:
             module_name = parts[1]
+            if module_name == "system":
+                from . import system
+
+                self.variables["system"] = system
             try:
                 self.variables[module_name] = importlib.import_module(module_name)
             except ImportError:
@@ -146,7 +150,7 @@ class SimpleInterpreter:
         if rest.strip().startswith("input"):
             prompt = rest.split("(", 1)[1].rstrip(")").strip('"')
             self.variables[var_name] = input(prompt)
-    
+
     def process_concatenation(self, line):
         var_name, rest = line.split("=", 1)
         var_name = var_name.strip()
@@ -157,7 +161,7 @@ class SimpleInterpreter:
             if part in self.variables:
                 result += self.variables[part]
             elif part.startswith('"') and part.endswith('"'):
-                result += part[1:-1]  # remove the double quotes
+                result += part[1:-1]
             else:
                 print(f"Invalid syntax in line: {line}")
                 sys.exit(1)

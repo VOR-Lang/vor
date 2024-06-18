@@ -1,4 +1,10 @@
+# Misc
 __pycache__
 .DS_Store
 venv/
 *.txt
+
+# Packaging
+*.egg-info
+dist
+build
