@@ -1,5 +1,0 @@
-x = 10 + 5
-y = 20 + x
-print(x)
-print(x + y)
-print(y)
