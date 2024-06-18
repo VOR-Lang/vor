@@ -120,7 +120,7 @@ class SimpleInterpreter:
         if len(parts) == 2:
             module_name = parts[1]
             if module_name == "system":
-                from . import system
+                from vorlang import system
 
                 self.variables["system"] = system
             try:
