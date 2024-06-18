@@ -1,6 +1,8 @@
 # VOR
 [![CodeQL](https://github.com/VOR-Lang/vor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/VOR-Lang/vor/actions/workflows/github-code-scanning/codeql)
 
+[![wakatime](https://wakatime.com/badge/github/VOR-Lang/vor.svg)](https://wakatime.com/badge/github/VOR-Lang/vor)
+
 VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Programming Language
 
 (This basically means this is a general purpose programming language)
