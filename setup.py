@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name="vorlang",
-    version="0.0.2-alpha",
+    version="0.0.4",
     author="Vorlang",
     author_email="me@zanderlewis.dev",
     description="The VOR Programming Language.",

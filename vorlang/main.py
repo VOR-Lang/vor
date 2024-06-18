@@ -123,11 +123,12 @@ class SimpleInterpreter:
                 from vorlang import system
 
                 self.variables["system"] = system
-            try:
-                self.variables[module_name] = importlib.import_module(module_name)
-            except ImportError:
-                print(f"Module {module_name} could not be imported.")
-                sys.exit(1)
+            else:
+                try:
+                    self.variables[module_name] = importlib.import_module(module_name)
+                except ImportError:
+                    print(f"Module {module_name} could not be imported.")
+                    sys.exit(1)
         else:
             print("Invalid module statement")
             sys.exit(1)
