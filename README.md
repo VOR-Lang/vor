@@ -3,7 +3,7 @@
 
 VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Programming Language
 
-(For the non-coders, this basically means this is a general purpose programming language)
+(This basically means this is a general purpose programming language)
 
 ## Table of Contents
 - [VOR](#vor)
