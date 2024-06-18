@@ -1,4 +1,5 @@
 module lib1
+module system
 
 define calculate(z,zz):
     y = 20 + z
@@ -20,3 +21,8 @@ endfunc
 
 i = input("What is your name?: ")
 hello(i)
+
+system.run("pip3 -V")
+system.exit()
+# system.whoami() should not run because of system.exit()
+system.whoami()

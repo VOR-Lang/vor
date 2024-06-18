@@ -16,6 +16,7 @@ def remove_comments_and_format(file_path):
 def remove_pycache():
     try:
         subprocess.run(["rm", "-rf", "__pycache__"])
+        subprocess.run(["rm", "-rf", "vorlang/__pycache__"])
     except FileNotFoundError:
         pass
 
@@ -24,3 +25,6 @@ python_files = [f for f in os.listdir("./") if f.endswith(".py")]
 for file in python_files:
     remove_comments_and_format(f"./{file}")
 remove_pycache()
+python_files = [f for f in os.listdir("./vorlang") if f.endswith(".py")]
+for file in python_files:
+    remove_comments_and_format(f"./vorlang/{file}")
