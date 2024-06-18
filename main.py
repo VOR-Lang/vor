@@ -68,7 +68,7 @@ class SimpleInterpreter:
     
     def process_function(self, line):
         func_name, args = line.split("define ")[1].split("(")[0], line.split("(")[1].split(")")[0]
-        self.functions[func_name] = {"args": args.split(", "), "lines": []}
+        self.functions[func_name] = {"args": [arg.strip() for arg in args.split(",")], "lines": []}  # Strip whitespace from each argument
         self.in_function_definition = True
         self.current_function = func_name
 
@@ -77,7 +77,7 @@ class SimpleInterpreter:
         if "(" in func_name and ")" in func_name:
             func_name, args = func_name.split("(")[0], func_name.split("(")[1].split(")")[0]
             if args:
-                args = [eval(arg, self.variables) for arg in args.split(", ")]
+                args = [eval(arg.strip(), self.variables) for arg in args.split(",")]  # Strip whitespace from each argument
 
         if "." in func_name:
             # This is a function from an imported module
