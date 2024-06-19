@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name="vorlang",
-    version="0.0.5",
+    version="0.0.6",
     author="Vorlang",
     author_email="me@zanderlewis.dev",
     description="The VOR Programming Language.",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points={"console_scripts": ["vor=vorlang.main:main", ""]},
+    entry_points={"console_scripts": ["vor=vorlang.main:main"]},
     python_requires=">=3.6",
 )

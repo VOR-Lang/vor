@@ -4,7 +4,7 @@ import argparse
 from vorlangpolish import *
 
 
-class SimpleInterpreter:
+class VORInterpreter:
 
     def __init__(self, filename):
         with open(filename, "r") as file:
@@ -86,14 +86,12 @@ class SimpleInterpreter:
         self.current_function = func_name
 
     def call_function(self, func_name):
-        args = []
         if "(" in func_name and ")" in func_name:
             func_name, args = (
                 func_name.split("(")[0],
                 func_name.split("(")[1].split(")")[0],
             )
-            if args:
-                args = [eval(arg.strip(), self.variables) for arg in args.split(",")]
+            args = [eval(arg.strip(), self.variables) for arg in args.split(",")] if args else []
         if "." in func_name:
             module_name, function_name = func_name.split(".")
             if module_name in self.variables and hasattr(
@@ -171,29 +169,33 @@ class SimpleInterpreter:
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Interpreter for the VOR programming language."
-    )
-    parser.add_argument(
-        "command", help="The command to execute. Either 'polish' or 'interpret'."
-    )
-    parser.add_argument(
-        "filename", help="The name of the file to interpret or polish.", nargs="?"
-    )
-    args = parser.parse_args()
-    if args.command not in ["polish", "interpret"]:
-        print("Invalid command. The command must be either 'polish' or 'interpret'.")
-        sys.exit(1)
-    if args.filename and (not args.filename.endswith(".vor")):
-        print("Invalid file extension. Only .vor files are supported.")
-        sys.exit(1)
-    if args.command == "polish":
-        print("Polishing...")
-        polish = VorFormatter(args.filename)
-        polish.format()
-    else:
-        interpreter = SimpleInterpreter(args.filename if args.filename else "")
-        interpreter.interpret()
+    try:
+        parser = argparse.ArgumentParser(
+            description="Interpreter for the VOR programming language."
+        )
+        parser.add_argument(
+            "command", help="The command to execute. Either 'polish' or 'run'."
+        )
+        parser.add_argument(
+            "filename", help="The name of the file to interpret or polish.", nargs="?"
+        )
+        args = parser.parse_args()
+        if args.command not in ["polish", "run"]:
+            print("Invalid command. The command must be either 'polish' or 'run'.")
+            sys.exit(1)
+        if args.filename and (not args.filename.endswith(".vor")):
+            print("Invalid file extension. Only .vor files are supported.")
+            sys.exit(1)
+        if args.command == "polish":
+            print("Polishing...")
+            polish = VorFormatter(args.filename)
+            polish.format()
+        else:
+            interpreter = VORInterpreter(args.filename if args.filename else "")
+            interpreter.interpret()
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        sys.exit(0)
 
 
 if __name__ == "__main__":

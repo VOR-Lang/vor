@@ -19,6 +19,13 @@ define hello(name):
 	print(message)
 endfunc
 
+
+define no_args():
+	print("no args")
+endfunc
+
+no_args()
+
 i = input("What is your name?: ")
 hello(i)
 system.run("pip3 -V")
