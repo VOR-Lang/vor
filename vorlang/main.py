@@ -1,6 +1,7 @@
 import sys
 import importlib
 import argparse
+from vorlangpolish import *
 
 
 class SimpleInterpreter:
@@ -173,13 +174,26 @@ def main():
     parser = argparse.ArgumentParser(
         description="Interpreter for the VOR programming language."
     )
-    parser.add_argument("filename", help="The name of the file to interpret.")
+    parser.add_argument(
+        "command", help="The command to execute. Either 'polish' or 'interpret'."
+    )
+    parser.add_argument(
+        "filename", help="The name of the file to interpret or polish.", nargs="?"
+    )
     args = parser.parse_args()
-    if not args.filename.endswith(".vor"):
+    if args.command not in ["polish", "interpret"]:
+        print("Invalid command. The command must be either 'polish' or 'interpret'.")
+        sys.exit(1)
+    if args.filename and (not args.filename.endswith(".vor")):
         print("Invalid file extension. Only .vor files are supported.")
         sys.exit(1)
-    interpreter = SimpleInterpreter(args.filename)
-    interpreter.interpret()
+    if args.command == "polish":
+        print("Polishing...")
+        polish = VorFormatter(args.filename)
+        polish.format()
+    else:
+        interpreter = SimpleInterpreter(args.filename if args.filename else "")
+        interpreter.interpret()
 
 
 if __name__ == "__main__":
