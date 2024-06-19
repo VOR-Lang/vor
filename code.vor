@@ -1,28 +1,28 @@
 module lib1
 module system
 
+
 define calculate(z,zz):
-    y = 20 + z
-    x = zz + 1
-    print(x)
-    print(x + y)
-    print(y)
+	y = 20 + z
+	x = zz + 1
+	print(x)
+	print(x + y)
+	print(y)
 endfunc
 
 calculate(5,5)
-
 lib1.sqr(10)
 lib1.print_hello()
 
 define hello(name):
-    message = "Hello, " :: name :: "!"
-    print(message)
+	message = "Hello, " :: name :: "!"
+	print(message)
 endfunc
 
 i = input("What is your name?: ")
 hello(i)
-
 system.run("pip3 -V")
 system.exit()
+
 # system.whoami() should not run because of system.exit()
 system.whoami()
