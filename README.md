@@ -12,6 +12,7 @@ VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Progr
   - [Features](#features)
   - [Standard Libraries](#standard-libraries)
   - [Utilities](#utilities)
+  - [Getting Started](#getting-started)
 
 ## Features
 
@@ -25,3 +26,19 @@ VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Progr
 ## Utilities
 
 - [Polish: The official VOR Formatter](https://github.com/VOR-Lang/polish)
+
+## Getting Started
+
+### PyPi
+
+1. Make sure you have python and pip installed
+2. Download via: `pip3 install vorlang`
+3. You are done!
+
+### Building from source
+
+1. Make sure you have python and pip installed
+2. Clone the repository: `git clone https://github.com/VOR-Lang/vor.git`
+3. Open the directory: `cd vor`
+4. Download via: `pip3 install .`
+5. You are done!
