@@ -48,4 +48,4 @@ VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Progr
 
 - `def` -> `define`
 - `import` -> `module`
-- `return -> `send` (coming soon)
+- `return` -> `send` (coming soon)
