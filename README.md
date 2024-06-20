@@ -13,6 +13,7 @@ VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Progr
   - [Standard Libraries](#standard-libraries)
   - [Utilities](#utilities)
   - [Getting Started](#getting-started)
+  - [Coming from Python](#coming-from-python)
 
 ## Features
 
@@ -42,3 +43,9 @@ VOR Programming Language: VHD (Very High Definition) Omnidirectional Range Progr
 3. Open the directory: `cd vor`
 4. Download via: `pip3 install .`
 5. You are done!
+
+## Coming from Python
+
+- `def` -> `define`
+- `import` -> `module`
+- `return -> `send` (coming soon)
